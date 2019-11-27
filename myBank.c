@@ -136,10 +136,7 @@ void closeAccount()
         counterAccounts--;
         printf("Your account %d close now\n", myAccountNum);
     }
-         else
-        {
-            printf("The account %d is already close\n",myAccountNum);
-        }
+
 }
 
 void addInterest()
