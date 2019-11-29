@@ -1,25 +1,24 @@
 #include <stdio.h>
 #include "myBank.h"
-#define naxAccounts 50
+#define maxAccounts 50
 #define FirstNumAccount 901
 
-double arr[naxAccounts][2]={0};
+double arr[maxAccounts][2]={0};
 double money=0;
 int counterAccounts=0;
 int indexMyAccountNum=0;
 int myAccountNum=0;
 
 
-
 void openAccount()
 
 {
-    if (counterAccounts==naxAccounts)
+    if (counterAccounts==maxAccounts)
     {
         printf("Sorry, we have too much accounts\n");
     }
     int flag=0;
-    for (int i = 0; (i < naxAccounts)&&(flag==0); ++i)
+    for (int i = 0; (i < maxAccounts)&&(flag==0); ++i)
     {
             if (arr[i][0]==0)
             {
@@ -146,7 +145,7 @@ void addInterest()
     printf("How much percent of interest do you want to add?\n");
     if(scanf("%lf",&interest)==1)
     {
-        for (int i = 0; i < naxAccounts; ++i)
+        for (int i = 0; i < maxAccounts; ++i)
         {
             if(arr[i][0] == 1)
             {
@@ -172,7 +171,7 @@ void printAccounts()
 {
     printf("The open Accounts:\n");
 
-    for (int i = 0; i < naxAccounts; ++i)
+    for (int i = 0; i < maxAccounts; ++i)
     {
         if (arr[i][0]==1)
         {
@@ -208,7 +207,7 @@ int openOrClose()
 
 void closeAll()
 {
-    for (int i = 0; i < naxAccounts; ++i)
+    for (int i = 0; i < maxAccounts; ++i)
     {
         if (arr[i][0] == 1)
         {
