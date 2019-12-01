@@ -5,10 +5,8 @@ OBJECTS_MYBANK=myBank.o
 FLAGS= -Wall -g
 
 
-myBanks: $(OBJECTS_MYBANK)
-	$(AR) rcs libmyBank.a $(OBJECTS_MYBANK)
-
-libmyBank.a: $(OBJECTS_MYBANK)
+myBanks: libmyBank.a
+libmyBank.a: $(OBJECTS_MYBANK) myBank.h
 	 $(AR) rcs libmyBank.a $(OBJECTS_MYBANK)
 
 mains: $(OBJECTS_MAIN) libmyBank.a
